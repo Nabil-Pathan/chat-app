@@ -13,7 +13,7 @@ interface Message {
   };
 }
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://chat-app-guaw.onrender.com";
 const socket = io(ENDPOINT);
 
 const SingleChat = () => {

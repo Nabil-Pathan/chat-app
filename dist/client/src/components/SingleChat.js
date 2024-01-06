@@ -32,7 +32,7 @@ const UserContext_1 = require("../context/UserContext");
 const socket_io_client_1 = __importDefault(require("socket.io-client"));
 const react_router_dom_1 = require("react-router-dom");
 const react_router_dom_2 = require("react-router-dom");
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "https://chat-app-guaw.onrender.com";
 const socket = (0, socket_io_client_1.default)(ENDPOINT);
 const SingleChat = () => {
     const navigate = (0, react_router_dom_2.useNavigate)();

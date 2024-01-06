@@ -11,13 +11,10 @@ const reportWebVitals_1 = __importDefault(require("./reportWebVitals"));
 const react_router_dom_1 = require("react-router-dom");
 const UserProvider_1 = __importDefault(require("./context/UserProvider"));
 const root = client_1.default.createRoot(document.getElementById('root'));
-root.render(<react_1.default.StrictMode>
-    <react_router_dom_1.BrowserRouter>
-    <UserProvider_1.default>
-    <App_1.default />
-    </UserProvider_1.default>
-    </react_router_dom_1.BrowserRouter>
-  </react_1.default.StrictMode>);
+root.render(react_1.default.createElement(react_1.default.StrictMode, null,
+    react_1.default.createElement(react_router_dom_1.BrowserRouter, null,
+        react_1.default.createElement(UserProvider_1.default, null,
+            react_1.default.createElement(App_1.default, null)))));
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

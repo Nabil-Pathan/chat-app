@@ -125,35 +125,20 @@ const SingleChat = () => {
     const handleNavigate = () => {
         navigate('/chats');
     };
-    return (<div className="w-full h-screen flex flex-col">
-      <div className="flex items-center gap-3 p-4 bg-gray-800 text-white sticky top-0">
-        <button onClick={handleNavigate}>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6">
-  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/>
-    </svg>
-    </button>
-
-        {userName && <h2 className="text-2xl font-bold">{userName}</h2>}
-      
-      </div>
-      <div id="chat-container" className="flex-1 w-full bg-gray-100 overflow-y-auto p-4" style={{ scrollBehavior: 'auto' }}>
-        {messages.map((message, index) => (<div key={index} className={`flex items-end ${message.sender._id === user.user._id ? 'justify-end' : 'justify-start'}`}>
-            <div className={message.sender._id === user.user._id ? sentMessageClasses : receivedMessageClasses}>
-              {message.content}
-            </div>
-          </div>))}
-      </div>
-      <div className="p-4 sticky bottom-0">
-        <div className="flex items-center">
-          <input type="text" placeholder="Type your message..." value={newMessage} onChange={(e) => setNewMessage(e.target.value)} className="flex-1 rounded-md outline-none p-2 mr-2"/>
-          <button onClick={sendMessage} className="bg-gray-800 hover:bg-gray-700 text-white p-2 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
-              <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </div>);
+    return (react_1.default.createElement("div", { className: "w-full h-screen flex flex-col" },
+        react_1.default.createElement("div", { className: "flex items-center gap-3 p-4 bg-gray-800 text-white sticky top-0" },
+            react_1.default.createElement("button", { onClick: handleNavigate },
+                react_1.default.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", strokeWidth: 2.5, stroke: "currentColor", className: "w-6 h-6" },
+                    react_1.default.createElement("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" }))),
+            userName && react_1.default.createElement("h2", { className: "text-2xl font-bold" }, userName)),
+        react_1.default.createElement("div", { id: "chat-container", className: "flex-1 w-full bg-gray-100 overflow-y-auto p-4", style: { scrollBehavior: 'auto' } }, messages.map((message, index) => (react_1.default.createElement("div", { key: index, className: `flex items-end ${message.sender._id === user.user._id ? 'justify-end' : 'justify-start'}` },
+            react_1.default.createElement("div", { className: message.sender._id === user.user._id ? sentMessageClasses : receivedMessageClasses }, message.content))))),
+        react_1.default.createElement("div", { className: "p-4 sticky bottom-0" },
+            react_1.default.createElement("div", { className: "flex items-center" },
+                react_1.default.createElement("input", { type: "text", placeholder: "Type your message...", value: newMessage, onChange: (e) => setNewMessage(e.target.value), className: "flex-1 rounded-md outline-none p-2 mr-2" }),
+                react_1.default.createElement("button", { onClick: sendMessage, className: "bg-gray-800 hover:bg-gray-700 text-white p-2 rounded" },
+                    react_1.default.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", className: "w-6 h-6" },
+                        react_1.default.createElement("path", { d: "M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" })))))));
 };
 exports.default = SingleChat;
 //# sourceMappingURL=SingleChat.js.map

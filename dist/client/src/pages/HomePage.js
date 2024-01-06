@@ -35,28 +35,16 @@ const HomePage = () => {
     const handleTabClick = (tab) => {
         setActiveTab(tab);
     };
-    return (<div className="container md:h-screen   mx-auto max-w-xl">
-    <div className="flex justify-center p-3 bg-white w-full mt-4 rounded-lg border-2 text-center">
-      <h1 className="text-4xl font-semibold text-black">Conversa</h1>
-    </div>
-
-    <div className="bg-white w-full p-4 rounded-lg border-2 shadow-lg">
-      <div className="flex">
-        <react_router_dom_1.Link onClick={() => handleTabClick('login')} to="#" className={`font-bold w-1/2 p-2 text-center ${activeTab === "login" ? "bg-blue-500 text-white" : "bg-white "} rounded-l-lg border-r border-t border-b`}>
-          Login
-        </react_router_dom_1.Link>
-        <react_router_dom_1.Link onClick={() => handleTabClick('signup')} to="#" className={`font-bold w-1/2 p-2 text-center  rounded-r-lg border-l border-t border-b  ${activeTab === "signup" ? "bg-blue-500 text-white" : "bg-white "} `}>
-          Signup
-        </react_router_dom_1.Link>
-      </div>
-
-      <div className="mt-1 ">
-        
-      {activeTab === 'login' && <Signin_1.default />}
-          {activeTab === 'signup' && <Signup_1.default />}
-      </div>
-    </div>
-  </div>);
+    return (react_1.default.createElement("div", { className: "container md:h-screen   mx-auto max-w-xl" },
+        react_1.default.createElement("div", { className: "flex justify-center p-3 bg-white w-full mt-4 rounded-lg border-2 text-center" },
+            react_1.default.createElement("h1", { className: "text-4xl font-semibold text-black" }, "Conversa")),
+        react_1.default.createElement("div", { className: "bg-white w-full p-4 rounded-lg border-2 shadow-lg" },
+            react_1.default.createElement("div", { className: "flex" },
+                react_1.default.createElement(react_router_dom_1.Link, { onClick: () => handleTabClick('login'), to: "#", className: `font-bold w-1/2 p-2 text-center ${activeTab === "login" ? "bg-blue-500 text-white" : "bg-white "} rounded-l-lg border-r border-t border-b` }, "Login"),
+                react_1.default.createElement(react_router_dom_1.Link, { onClick: () => handleTabClick('signup'), to: "#", className: `font-bold w-1/2 p-2 text-center  rounded-r-lg border-l border-t border-b  ${activeTab === "signup" ? "bg-blue-500 text-white" : "bg-white "} ` }, "Signup")),
+            react_1.default.createElement("div", { className: "mt-1 " },
+                activeTab === 'login' && react_1.default.createElement(Signin_1.default, null),
+                activeTab === 'signup' && react_1.default.createElement(Signup_1.default, null)))));
 };
 exports.default = HomePage;
 //# sourceMappingURL=HomePage.js.map

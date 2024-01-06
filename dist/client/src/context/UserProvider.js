@@ -53,11 +53,9 @@ const UserProvider = ({ children }) => {
         fetchUser();
     }, [navigate]);
     if (loading) {
-        return <Loader_1.default />;
+        return react_1.default.createElement(Loader_1.default, null);
     }
-    return (<UserContext_1.default.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext_1.default.Provider>);
+    return (react_1.default.createElement(UserContext_1.default.Provider, { value: { user, setUser } }, children));
 };
 exports.default = UserProvider;
 //# sourceMappingURL=UserProvider.js.map

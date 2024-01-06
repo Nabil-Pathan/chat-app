@@ -54,17 +54,11 @@ const UserList = ({ setSelectedUserId }) => {
     (0, react_1.useEffect)(() => {
         fetchUsers();
     }, []);
-    return (<div className="flex w-full justify-center">
-      {/* Left Section - User List */}
-      <div className="w-full ">
-        <h2 className="text-2xl font-bold text-center mt-1">Users</h2>
-        <ul className="p-4">
-          {users.map((user) => (<react_router_dom_1.Link to={`/single-chat/${user._id}`} key={user._id} onClick={() => onUserSelect(user._id)} className="block mb-2 cursor-pointer p-4 rounded-md transition duration-300 hover:bg-blue-100 transform hover:scale-105">
-              <p className="text-blue-600 font-semibold">{user.name}</p>
-            </react_router_dom_1.Link>))}
-        </ul>
-      </div>
-    </div>);
+    return (react_1.default.createElement("div", { className: "flex w-full justify-center" },
+        react_1.default.createElement("div", { className: "w-full " },
+            react_1.default.createElement("h2", { className: "text-2xl font-bold text-center mt-1" }, "Users"),
+            react_1.default.createElement("ul", { className: "p-4" }, users.map((user) => (react_1.default.createElement(react_router_dom_1.Link, { to: `/single-chat/${user._id}`, key: user._id, onClick: () => onUserSelect(user._id), className: "block mb-2 cursor-pointer p-4 rounded-md transition duration-300 hover:bg-blue-100 transform hover:scale-105" },
+                react_1.default.createElement("p", { className: "text-blue-600 font-semibold" }, user.name))))))));
 };
 exports.default = UserList;
 //# sourceMappingURL=UserList.js.map

@@ -34,9 +34,9 @@ const ChatPage = () => {
     const navigate = (0, react_router_dom_1.useNavigate)();
     const { setUser } = (0, UserContext_1.useUserContext)();
     const [selectedUserId, setSelectedUserId] = (0, react_1.useState)(null);
-    return (react_1.default.createElement("div", { className: "flex w-[100%] flex-col h-[650px] " },
-        react_1.default.createElement("div", { className: "flex  w-[100%] overflow-hidden bg-gray-200" },
-            react_1.default.createElement("div", { className: " w-full border-r  p-4 bg-white" },
+    return (react_1.default.createElement("div", { className: "flex w-[100%] flex-col md:min-h-screen " },
+        react_1.default.createElement("div", { className: "flex   w-[100%] overflow-hidden bg-gray-200" },
+            react_1.default.createElement("div", { className: "flex items-center justify-center w-full border-r  p-4 bg-white" },
                 react_1.default.createElement(UserList_1.default, { setSelectedUserId: setSelectedUserId })))));
 };
 exports.default = ChatPage;

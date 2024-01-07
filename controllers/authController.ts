@@ -7,7 +7,7 @@ import jwt from "jsonwebtoken"
 export const SignUpController = async  (req : Request,res : Response)=>{
 
     try {
-        const { name , email , password } = req.body
+        const { name , email , pic , password } = req.body
 
         if(!name || !email || !password){
             return res.status(400).json({ error : "Please Provide All credentials"})
@@ -24,7 +24,7 @@ export const SignUpController = async  (req : Request,res : Response)=>{
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password , salt)
 
-        const newUser = await User.create({ name , email , password : hashedPassword })
+        const newUser = await User.create({ name , email ,pic, password : hashedPassword })
 
         const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET!)
 

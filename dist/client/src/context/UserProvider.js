@@ -37,6 +37,7 @@ const UserProvider = ({ children }) => {
             _id: "",
             name: "",
             email: "",
+            pic: ""
         },
         token: "",
     });

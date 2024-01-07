@@ -8,19 +8,6 @@ const Header = () => {
   const { user, setUser } = useUserContext();
   const navigate = useNavigate();
 
-  const handleLogout = async () => {
-    localStorage.removeItem('userInfo');
-    setUser({
-      user: {
-        _id: '',
-        name: '',
-        email: '',
-      },
-      token: '',
-    });
-    toast.success('Logout Success');
-    navigate('/');
-  };
 
   return (
     <>
@@ -32,8 +19,9 @@ const Header = () => {
         {
           user.token !== "" && (
             <div className='flex gap-2 items-center justify-center'>
-              <Link to='/profile' className="mr-2">Profile</Link>
-              <button onClick={handleLogout} className="bg-white md:block hidden text-blue-500 px-2 py-1 rounded">Logout</button>
+              <Link to='/profile' className="mr-2">
+                <img className='rounded-full h-9 w-9 object-cover' src={user.user.pic} alt="Profile" />
+              </Link>
         </div> 
           )
         }

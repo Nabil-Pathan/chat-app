@@ -42,7 +42,7 @@ const Signin = () => {
             react_1.default.createElement("div", { className: "mb-4" },
                 react_1.default.createElement("label", { className: "block text-gray-700 text-sm font-bold mb-2", htmlFor: "password" }, "Password"),
                 react_1.default.createElement("input", { className: "w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500", type: "password", id: "password", placeholder: "Your Password", onChange: (e) => setFormData({ ...formData, password: e.target.value }) })),
-            react_1.default.createElement("button", { className: "w-full px-4 py-2 bg-blue-500 text-white rounded-md font-bold hover:bg-blue-400", type: "submit" }, "Sign In"))));
+            react_1.default.createElement("button", { className: "w-full px-4 py-2 bg-gray-800 text-white rounded-md font-bold hover:bg-gray-700", type: "submit" }, "Sign In"))));
 };
 exports.default = Signin;
 //# sourceMappingURL=Signin.js.map

@@ -24,7 +24,7 @@ const sendMessageController = async (req, res) => {
         message = await message.populate("chat");
         const createdMessage = await userModel_1.default.populate(message, {
             path: 'chat.users',
-            select: 'name email'
+            select: 'name email pic'
         });
         await chatModal_1.default.findByIdAndUpdate(req.body.chatId, {
             latestMessage: createdMessage
@@ -39,7 +39,7 @@ const sendMessageController = async (req, res) => {
 exports.sendMessageController = sendMessageController;
 const allMessagesController = async (req, res) => {
     try {
-        const messages = await messageModel_1.default.find({ chat: req.params.chatId }).populate("sender", "name email").populate("chat");
+        const messages = await messageModel_1.default.find({ chat: req.params.chatId }).populate("sender", "name email pic").populate("chat");
         return res.json({ messages }).status(200);
     }
     catch (error) {

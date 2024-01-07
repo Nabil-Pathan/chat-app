@@ -18,6 +18,7 @@
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.21.1",
     "react-scripts": "5.0.1",
     "socket.io": "^4.7.2",
@@ -51,6 +52,7 @@
   },
   "devDependencies": {
     "@types/react-infinite-scroll-component": "^5.0.0",
+    "@types/react-loader-spinner": "^4.0.0",
     "@types/socket.io-client": "^3.0.0",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.32",

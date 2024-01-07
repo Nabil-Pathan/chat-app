@@ -8,6 +8,7 @@ import { toast } from "react-hot-toast";
 interface formDataType {
   name  : string
   email : string
+  pic : string
   password : string 
 }
 
@@ -18,6 +19,7 @@ const Signup = () => {
   const [ formData , setFormData] = useState<formDataType>({
     name   : "",
     email : "" ,
+    pic: "",
     password : "" 
   })
 
@@ -33,6 +35,36 @@ const Signup = () => {
      } catch (error : any) {
         console.log(error.message);
      }
+  }
+  
+  const postDetails = (e : any) =>{
+    
+    const pics = e.target.files[0]
+
+    if(pics === undefined){
+      toast.error('Please Select an Image')
+    }
+
+    if(pics.type === "image/jpeg" || pics.type === "image/png"){
+       const data = new FormData()
+       data.append("file",pics)
+       data.append("upload_preset","new-chat-app")
+       data.append("cloud_name","dpvicaxva")
+
+       fetch("https://api.cloudinary.com/v1_1/dpvicaxva/image/upload",{
+        method: "POST",
+        body: data
+      }).then((res)=> res.json())
+      .then(data =>{
+         setFormData({...formData , pic : data.url.toString()})
+         console.log(data.url.toString());
+      })
+
+      .catch((err)=>{
+        console.log(err);
+      })
+    }
+      
   }
 
     return (
@@ -74,7 +106,21 @@ const Signup = () => {
               onChange={(e)=> setFormData({...formData , password : e.target.value})}
             />
           </div>
-          <button  className="w-full px-4 py-2 bg-blue-500 text-white rounded-md font-bold hover:bg-blue-400" type="submit">
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+              Profile Pic
+            </label>
+            <input
+              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+              type="file"
+              id="image"
+              name="image"
+              accept="image/*"
+              onChange={postDetails}
+
+            />
+          </div>
+          <button  className="w-full px-4 py-2 bg-gray-800 text-white rounded-md font-bold hover:bg-gray-700" type="submit">
             Sign Up
           </button>
         </form>

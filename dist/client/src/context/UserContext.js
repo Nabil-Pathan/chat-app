@@ -8,6 +8,7 @@ const defaultUserContextValue = {
             _id: "",
             name: "",
             email: "",
+            pic: ""
         },
         token: ""
     },

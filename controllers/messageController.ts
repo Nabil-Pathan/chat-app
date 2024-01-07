@@ -28,7 +28,7 @@ export const sendMessageController = async (req : Request | any,res : Response)=
 
         const createdMessage = await User.populate(message ,{
             path:'chat.users',
-            select: 'name email'
+            select: 'name email pic'
         })
 
         await Chat.findByIdAndUpdate(req.body.chatId , {
@@ -45,7 +45,7 @@ export const sendMessageController = async (req : Request | any,res : Response)=
 export const allMessagesController = async (req : Request | any , res : Response)=>{
     
     try {       
-        const messages = await Message.find({chat : req.params.chatId}).populate("sender","name email").populate("chat")
+        const messages = await Message.find({chat : req.params.chatId}).populate("sender","name email pic").populate("chat")
         return res.json({messages}).status(200)
     } catch (error : any) {
         console.log("From All Messages",error.message);

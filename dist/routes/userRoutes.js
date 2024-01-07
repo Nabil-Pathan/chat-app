@@ -8,5 +8,6 @@ const express_1 = __importDefault(require("express"));
 const verifyUser_1 = require("../middleware/verifyUser");
 const router = express_1.default.Router();
 router.get('/all-users', verifyUser_1.verifyToken, userControllers_1.getAllUsersController);
+router.get('/search-user', verifyUser_1.verifyToken, userControllers_1.searchUserController);
 exports.default = router;
 //# sourceMappingURL=userRoutes.js.map

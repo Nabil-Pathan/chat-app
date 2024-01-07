@@ -4,6 +4,7 @@ interface UserData {
   _id : string
   name: string;
   email: string;
+  pic : string
 }
 
 interface User {
@@ -22,6 +23,7 @@ const defaultUserContextValue: UserContextType = {
       _id : "",
       name: "",
       email: "",
+      pic : ""
     },
 
     token : ""

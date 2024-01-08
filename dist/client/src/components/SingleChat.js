@@ -147,9 +147,9 @@ const SingleChat = () => {
             loading ? (react_1.default.createElement(Loader_1.default, null)) : (react_1.default.createElement("div", { id: "chat-container", className: "flex-1 w-full bg-gray-100 overflow-y-auto p-4", style: { scrollBehavior: 'auto' } }, messages.map((message, index) => (react_1.default.createElement("div", { key: index, className: `flex items-end ${message.sender._id === user.user._id ? 'justify-end' : 'justify-start'}` },
                 react_1.default.createElement("div", { className: message.sender._id === user.user._id ? sentMessageClasses : receivedMessageClasses }, message.content)))))),
             react_1.default.createElement("div", { className: "p-4 sticky bottom-0" },
-                react_1.default.createElement("form", { onSubmit: sendMessage, className: "flex items-center" },
-                    react_1.default.createElement("input", { type: "text", placeholder: "Type your message...", value: newMessage, onChange: (e) => setNewMessage(e.target.value), className: "flex-1 rounded-md outline-none  mr-2" }),
-                    react_1.default.createElement("button", { type: "submit", className: "bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded" },
+                react_1.default.createElement("div", { className: "flex justify-center items-center" },
+                    react_1.default.createElement("input", { type: "text", placeholder: "Type your message...", value: newMessage, onChange: (e) => setNewMessage(e.target.value), className: "flex-1 rounded-md outline-none mb-4  mr-2" }),
+                    react_1.default.createElement("button", { onClick: sendMessage, className: "bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded" },
                         react_1.default.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", fill: "currentColor", className: "w-7 h-7" },
                             react_1.default.createElement("path", { d: "M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" }))))))));
 };

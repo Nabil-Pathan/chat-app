@@ -186,21 +186,19 @@ const SingleChat = () => {
         )
       }
      
-      <div className="p-4 sticky bottom-0">
-        <div  className="flex justify-center items-center">
+      <div className=" flex items-center justify-center  sticky bottom-0">
           <input
             type="text"
             placeholder="Type your message..."
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
-            className="flex-1 rounded-md outline-none mb-4  mr-2"
+            className="flex-1 rounded-md outline-none p-4 "
           />
           <button onClick={sendMessage} className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7">
               <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
             </svg>
           </button>
-        </div>
       </div>
     </div>
     </>
